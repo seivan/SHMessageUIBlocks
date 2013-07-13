@@ -4,16 +4,16 @@ PODS:
 
 DEPENDENCIES:
   - SHMessageUIBlocks (from `../`)
-  - SHNavigationControllerBlocks (from `../../SHNavigationControllerBlocks`)
+  - SHNavigationControllerBlocks (from `https://github.com/seivan/SHNavigationControllerBlocks.git`)
 
 EXTERNAL SOURCES:
   SHMessageUIBlocks:
     :path: ../
   SHNavigationControllerBlocks:
-    :path: ../../SHNavigationControllerBlocks
+    :git: https://github.com/seivan/SHNavigationControllerBlocks.git
 
 SPEC CHECKSUMS:
   SHMessageUIBlocks: 4b618fb9029926fcc38c68f593b73f13e8aac501
-  SHNavigationControllerBlocks: 154754d187848dbf7bb17f570e12c853ed1f2c63
+  SHNavigationControllerBlocks: 4d152f2cdd166a3766e0b4f16ef705eef8a6f88c
 
-COCOAPODS: 0.21.0
+COCOAPODS: 0.22.2
