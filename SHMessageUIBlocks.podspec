@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   source_files   = "#{name}/**/*.{h,m}"
 
   s.version      = version
-  s.summary      = "CompletionBlocks for MFMailComposeViewController and MFMessageComposeViewController (MessageUI framework)"
+  s.summary      = "CompletionBlocks for MFMailComposeViewController and MFMessageComposeViewController (MessageUI framework)."
   s.description  = <<-DESC
 
                     * Swizzle and junk free
