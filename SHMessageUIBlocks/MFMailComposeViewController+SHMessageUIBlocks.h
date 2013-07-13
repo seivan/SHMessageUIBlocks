@@ -2,7 +2,8 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 
-
+#pragma mark -
+#pragma mark Block Defs
 typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
                                     MFMailComposeResult theResults,
                                     NSError * theError);

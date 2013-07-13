@@ -9,8 +9,6 @@ The blocks are automatically removed once the alert is gone, so it isn't necessa
 
 #### [Init](https://github.com/seivan/SHMessageUIBlocks#init-1)
 
-#### [Add](https://github.com/seivan/SHMessageUIBlocks#add-1)
-
 #### [Properties](https://github.com/seivan/SHMessageUIBlocks#properties-1)
 
 
@@ -28,10 +26,20 @@ Setup
 
 Put this either in specific files or your project prefix file
 
+For all controllers
+
+```objective-c
+#import "SHMessageUIBlocks.h"
+```
+
+For just Mail
+
 ```objective-c
 #import "MFMailComposeViewController+SHMessageUIBlocks.h"
 ```
-or
+
+For just Message
+
 ```objective-c
 #import "MFMessageComposeViewController+SHMessageUIBlocks.h"
 ```
@@ -39,40 +47,26 @@ or
 API
 -----
 
-### Init
+### Init Mail
 
 ```objective-c
 #pragma mark -
 #pragma mark Init
-+(instancetype)SH_alertViewWithTitle:(NSString *)theTitle withMessage:(NSString *)theMessage;
-
-+(instancetype)SH_alertViewWithTitle:(NSString *)theTitle
-                          andMessage:(NSString *)theMessage
-                        buttonTitles:(NSArray *)theButtonTitles
-                         cancelTitle:(NSString *)theCancelTitle
-                           withBlock:(SHAlertViewBlock)theBlock;
-
++(instancetype)SH_mailComposeViewController;
 
 ```
 
-### Add
+### Init Message
 
 ```objective-c
 #pragma mark -
-#pragma mark Adding
--(NSUInteger)SH_addButtonWithTitle:(NSString *)theTitle
-                         withBlock:(SHAlertViewBlock)theBlock;
-
-
-///Will add a new cancel button and make previous cancel buttons to a normal button
--(NSUInteger)SH_addButtonCancelWithTitle:(NSString *)theTitle
-                               withBlock:(SHAlertViewBlock)theBlock;
-
-
+#pragma mark Init
++(instancetype)SH_mailComposeViewController;
 
 ```
 
-### Properties
+
+### Properties Mail
 
 ```objective-c
 #pragma mark -
@@ -80,35 +74,52 @@ API
 
 #pragma mark -
 #pragma mark Setters
--(void)SH_setButtonBlockForIndex:(NSUInteger)theButtonIndex
-                       withBlock:(SHAlertViewBlock)theBlock;
+-(void)SH_setComposerCompletionBlock:(SHMailComposerBlock)theBlock;
 
--(void)SH_setButtonCancelBlock:(SHAlertViewBlock)theBlock;
-
--(void)SH_setWillShowBlock:(SHAlertViewShowBlock)theBlock;
--(void)SH_setDidShowBlock:(SHAlertViewShowBlock)theBlock;
-
--(void)SH_setWillDismissBlock:(SHAlertViewDismissBlock)theBlock;
--(void)SH_setDidDismissBlock:(SHAlertViewDismissBlock)theBlock;
-
--(void)SH_setFirstButtonEnabled:(SHAlertViewFirstButtonEnabledBlock)theBlock;
 
 #pragma mark -
 #pragma mark Getters
--(SHAlertViewBlock)SH_blockForButtonIndex:(NSUInteger)theButtonIndex;
+@property(nonatomic,readonly) SHMailComposerBlock SH_blockComposerCompletion;
+
+```
+
+### Block Definition Mail
+
+```objective-c
+#pragma mark -
+#pragma mark Block Defs
+
+typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
+                                    MFMailComposeResult theResults,
+                                    NSError * theError);
+
+```
+
+### Properties Message
+
+```objective-c
+#pragma mark -
+#pragma mark Properties
+
+#pragma mark -
+#pragma mark Setters
+-(void)SH_setComposerCompletionBlock:(SHMessageComposerBlock)theBlock;
 
 
-@property(nonatomic,readonly) SHAlertViewBlock SH_blockForCancelButton;
+#pragma mark -
+#pragma mark Getters
+@property(nonatomic,readonly) SHMessageComposerBlock SH_blockComposerCompletion;
 
+```
 
-@property(nonatomic,readonly) SHAlertViewShowBlock    SH_blockWillShow;
-@property(nonatomic,readonly) SHAlertViewShowBlock    SH_blockDidShow;
+### Block Definition Message
 
-@property(nonatomic,readonly) SHAlertViewDismissBlock SH_blockWillDismiss;
-@property(nonatomic,readonly) SHAlertViewDismissBlock SH_blockDidDismiss;
+```objective-c
+#pragma mark -
+#pragma mark Block Defs
 
-@property(nonatomic,readonly) SHAlertViewFirstButtonEnabledBlock SH_blockFirstButtonEnabled;
-
+typedef void (^SHMessageComposerBlock)(MFMessageComposeViewController * theController,
+                                       MessageComposeResult theResults);
 
 ```
 
@@ -116,14 +127,14 @@ API
 Contact
 -------
 
-If you end up using SHAlertViewBlocks in a project, I'd love to hear about it.
+If you end up using SHMessageUIBlocks in a project, I'd love to hear about it.
 
 email: [seivan.heidari@icloud.com](mailto:seivan.heidari@icloud.com)  
 twitter: [@seivanheidari](https://twitter.com/seivanheidari)
 
 ## License
 
-SHAlertViewBlocks is © 2013 [Seivan](http://www.github.com/seivan) and may be freely
+SHMessageUIBlocks is © 2013 [Seivan](http://www.github.com/seivan) and may be freely
 distributed under the [MIT license](http://opensource.org/licenses/MIT).
-See the [`LICENSE.md`](https://github.com/seivan/SHAlertViewBlocks/blob/master/LICENSE.md) file.
+See the [`LICENSE.md`](https://github.com/seivan/SHMessageUIBlocks/blob/master/LICENSE.md) file.
 

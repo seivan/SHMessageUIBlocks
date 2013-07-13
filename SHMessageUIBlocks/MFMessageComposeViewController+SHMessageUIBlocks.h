@@ -2,7 +2,8 @@
 
 #import <MessageUI/MFMessageComposeViewController.h>
 
-
+#pragma mark -
+#pragma mark Block Defs
 typedef void (^SHMessageComposerBlock)(MFMessageComposeViewController * theController,
                                        MessageComposeResult theResults);
 
