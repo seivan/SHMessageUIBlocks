@@ -7,12 +7,8 @@
 //
 
 #import "SHSecondViewController.h"
-
 #import "SHNavigationControllerBlocks.h"
-
 #import "MFMessageComposeViewController+SHMessageUIBlocks.h"
-
-#import "SHViewController.h"
 
 @interface SHSecondViewController ()
 -(void)showMessage;
@@ -73,7 +69,7 @@
     didShowTest = YES;
     dispatch_semaphore_signal(semaphoreDidShow);
   }];
-
+  
   [self presentViewController:vc animated:YES completion:nil];
   
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -89,7 +85,7 @@
     
   });
   
-
+  
   
   
 }

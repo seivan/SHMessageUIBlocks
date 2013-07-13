@@ -9,9 +9,7 @@
 
 
 #import "SHViewController.h"
-
 #import "MFMailComposeViewController+SHMessageUIBlocks.h"
-
 #import "SHNavigationControllerBlocks.h"
 
 @interface SHViewController ()
@@ -58,7 +56,7 @@
     __weak typeof(theController) weakController = theController;
     [theController dismissViewControllerAnimated:YES completion:^{
       SHBlockAssert(weakController == nil, @"theController should be gone");
-      [weakSelf performSegueWithIdentifier:@"second" sender:nil];      
+      [weakSelf performSegueWithIdentifier:@"second" sender:nil];
     }];
     
     composerCompleteTest = YES;
@@ -88,7 +86,7 @@
     SHBlockAssert(didShowTest, @"Should call didShowViewControllerBLock");
     
   });
-
+  
   [self presentViewController:vc animated:YES completion:nil];
   
   
