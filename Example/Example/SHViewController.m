@@ -58,7 +58,7 @@
     __weak typeof(theController) weakController = theController;
     [theController dismissViewControllerAnimated:YES completion:^{
       SHBlockAssert(weakController == nil, @"theController should be gone");
-      [weakSelf performSegueWithIdentifier:@"second" sender:nil];
+      [weakSelf performSegueWithIdentifier:@"second" sender:nil];      
     }];
     
     composerCompleteTest = YES;
@@ -82,14 +82,13 @@
     dispatch_group_leave(group);
   }];
   
-  
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+  dispatch_group_notify(group, dispatch_get_main_queue(), ^{
     SHBlockAssert(composerCompleteTest, @"Should call composerCompletionBlock");
     SHBlockAssert(willShowTest, @"Should call willShowViewControllerBLock");
     SHBlockAssert(didShowTest, @"Should call didShowViewControllerBLock");
     
   });
+
   [self presentViewController:vc animated:YES completion:nil];
   
   
