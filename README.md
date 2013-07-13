@@ -92,7 +92,7 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 ```objective-c
 #pragma mark -
 #pragma mark Init
-+(instancetype)SH_mailComposeViewController;
++(instancetype)SH_messageComposeViewController;
 
 ```
 
