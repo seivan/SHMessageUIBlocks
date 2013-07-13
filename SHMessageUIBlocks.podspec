@@ -7,13 +7,12 @@ Pod::Spec.new do |s|
   source_files   = "#{name}/**/*.{h,m}"
 
   s.version      = version
-  s.summary      = "-!"
+  s.summary      = "CompletionBlocks for MFMailComposeViewController and MFMessageComposeViewController (MessageUI framework)."
   s.description  = <<-DESC
 
--  
                     * Swizzle and junk free
                     * No need to clean up after - The control blocks are self maintained.
-                    * UIAlertView are referenced in a map with weak properties
+                    * The controllers are referenced in a map with weak properties
                     * Prefixed selectors.
                     * Minimum clutter on top of the public interface.
                     
