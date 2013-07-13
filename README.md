@@ -84,6 +84,9 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 
 ```
 
+***
+
+
 ### Init Message
 
 ```objective-c
