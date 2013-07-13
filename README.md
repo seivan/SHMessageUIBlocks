@@ -7,9 +7,13 @@ The blocks are automatically removed once the alert is gone, so it isn't necessa
 
 ### API
 
-#### [Init](https://github.com/seivan/SHMessageUIBlocks#init-1)
+#### [Init Mail](https://github.com/seivan/SHMessageUIBlocks#init-mail-1)
 
-#### [Properties](https://github.com/seivan/SHMessageUIBlocks#properties-1)
+#### [Init Message](https://github.com/seivan/SHMessageUIBlocks#init-message-1)
+
+#### [Properties Mail](https://github.com/seivan/SHMessageUIBlocks#properties-mail-1)
+
+#### [Properties Message](https://github.com/seivan/SHMessageUIBlocks#properties-mail-1)
 
 
 Installation
@@ -70,6 +74,13 @@ API
 
 ```objective-c
 #pragma mark -
+#pragma mark Block Defs
+
+typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
+                                    MFMailComposeResult theResults,
+                                    NSError * theError);
+
+#pragma mark -
 #pragma mark Properties
 
 #pragma mark -
@@ -85,19 +96,17 @@ API
 
 ### Block Definition Mail
 
-```objective-c
-#pragma mark -
-#pragma mark Block Defs
-
-typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
-                                    MFMailComposeResult theResults,
-                                    NSError * theError);
-
-```
 
 ### Properties Message
 
 ```objective-c
+#pragma mark -
+#pragma mark Block Defs
+
+typedef void (^SHMessageComposerBlock)(MFMessageComposeViewController * theController,
+                                       MessageComposeResult theResults);
+
+
 #pragma mark -
 #pragma mark Properties
 
@@ -112,16 +121,6 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 
 ```
 
-### Block Definition Message
-
-```objective-c
-#pragma mark -
-#pragma mark Block Defs
-
-typedef void (^SHMessageComposerBlock)(MFMessageComposeViewController * theController,
-                                       MessageComposeResult theResults);
-
-```
 
 
 Contact
