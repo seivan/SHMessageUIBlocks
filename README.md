@@ -9,9 +9,9 @@ The blocks are automatically removed once the alert is gone, so it isn't necessa
 
 #### [Init Mail](https://github.com/seivan/SHMessageUIBlocks#init-mail-1)
 
-#### [Init Message](https://github.com/seivan/SHMessageUIBlocks#init-message-1)
-
 #### [Properties Mail](https://github.com/seivan/SHMessageUIBlocks#properties-mail-1)
+
+#### [Init Message](https://github.com/seivan/SHMessageUIBlocks#init-message-1)
 
 #### [Properties Message](https://github.com/seivan/SHMessageUIBlocks#properties-mail-1)
 
@@ -60,16 +60,6 @@ API
 
 ```
 
-### Init Message
-
-```objective-c
-#pragma mark -
-#pragma mark Init
-+(instancetype)SH_mailComposeViewController;
-
-```
-
-
 ### Properties Mail
 
 ```objective-c
@@ -94,7 +84,14 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 
 ```
 
-### Block Definition Mail
+### Init Message
+
+```objective-c
+#pragma mark -
+#pragma mark Init
++(instancetype)SH_mailComposeViewController;
+
+```
 
 
 ### Properties Message
