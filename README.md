@@ -3,6 +3,7 @@ SHMessageUIBlocks
 
 Overview
 --------
+Composer Completion block for MFMailComposeViewController and MFMessageComposeViewController. 
 The blocks are automatically removed once the alert is gone, so it isn't necessary to clean up - Swizzle Free(™)
 
 ### API

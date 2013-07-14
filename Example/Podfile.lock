@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/seivan/SHNavigationControllerBlocks.git
 
 SPEC CHECKSUMS:
-  SHMessageUIBlocks: 4b618fb9029926fcc38c68f593b73f13e8aac501
+  SHMessageUIBlocks: 577675aee58f79301e2177b32ff4e425412efd4c
   SHNavigationControllerBlocks: 4d152f2cdd166a3766e0b4f16ef705eef8a6f88c
 
 COCOAPODS: 0.22.2
