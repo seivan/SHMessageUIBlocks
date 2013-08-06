@@ -17,8 +17,8 @@
 
 @implementation _SHComposerBlocksManager
 
-#pragma mark -
-#pragma mark Init & Dealloc
+
+#pragma mark - Init & Dealloc
 -(instancetype)init; {
   self = [super init];
   if (self) {
@@ -42,8 +42,8 @@
 }
 
 
-#pragma mark -
-#pragma mark Debugger
+
+#pragma mark - Debugger
 -(void)SH_memoryDebugger; {
   double delayInSeconds = 2.0;
   dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -53,11 +53,11 @@
   });
 }
 
-#pragma mark -
-#pragma mark Class selectors
 
-#pragma mark -
-#pragma mark Setter
+#pragma mark - Class selectors
+
+
+#pragma mark - Setter
 +(void)setComposerDelegate:(id<SHComposerDelegate>)theComposer;{
   _SHComposerBlocksManager * manager = [_SHComposerBlocksManager sharedManager];
   
@@ -65,6 +65,8 @@
     [theComposer setMessageComposeDelegate:manager];
   else if ([theComposer respondsToSelector:@selector(setMailComposeDelegate:)])
     [theComposer setMailComposeDelegate:manager];
+  
+
 }
 
 +(void)setBlock:(id)theBlock forController:(UIViewController *)theController; {
@@ -79,18 +81,18 @@
     [manager.mapBlocks removeObjectForKey:theController];
 }
 
-#pragma mark - 
-#pragma mark Getter
+
+#pragma mark - Getter
 +(id)blockForController:(UIViewController *)theController; {
   NSAssert(theController, @"Must pass a controller to fetch blocks for");
   return [[_SHComposerBlocksManager sharedManager].mapBlocks objectForKey:theController];
 }
 
-#pragma mark -
-#pragma mark Delegates
 
-#pragma mark -
-#pragma mark <MFMailComposeViewControllerDelegate>
+#pragma mark - Delegates
+
+
+#pragma mark - <MFMailComposeViewControllerDelegate>
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller
          didFinishWithResult:(MFMailComposeResult)result
@@ -100,8 +102,8 @@
   
 }
 
-#pragma mark -
-#pragma mark <MFMessageComposeViewControllerDelegate>
+
+#pragma mark - <MFMessageComposeViewControllerDelegate>
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller
                 didFinishWithResult:(MessageComposeResult)result; {

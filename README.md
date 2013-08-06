@@ -1,5 +1,8 @@
 SHMessageUIBlocks
 ==========
+[![Build Status](https://travis-ci.org/seivan/SHMessageUIBlocks.png?branch=master)](https://travis-ci.org/seivan/SHMessageUIBlocks)
+[![Version](http://cocoapod-badges.herokuapp.com/v/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
+[![Platform](http://cocoapod-badges.herokuapp.com/p/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
 
 Overview
 --------
@@ -58,6 +61,7 @@ API
 #pragma mark -
 #pragma mark Init
 +(instancetype)SH_mailComposeViewController;
++(instancetype)SH_mailComposeViewControllerWithBlock:(SHMailComposerBlock)theBlock;
 
 ```
 
@@ -94,6 +98,7 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 #pragma mark -
 #pragma mark Init
 +(instancetype)SH_messageComposeViewController;
++(instancetype)SH_messageComposeViewControllerWithBlock:(SHMessageComposerBlock)theBlock;
 
 ```
 
