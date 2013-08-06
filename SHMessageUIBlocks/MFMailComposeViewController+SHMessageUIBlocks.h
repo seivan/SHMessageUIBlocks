@@ -13,7 +13,7 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 
 #pragma mark - Init
 +(instancetype)SH_mailComposeViewController;
-
++(instancetype)SH_mailComposeViewControllerWithBlock:(SHMailComposerBlock)theBlock;
 
 #pragma mark - Properties
 

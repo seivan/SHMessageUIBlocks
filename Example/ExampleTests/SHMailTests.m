@@ -28,6 +28,19 @@
   STAssertNotNil(self.mailVc.mailComposeDelegate, nil);
 }
 
+-(void)testSH_mailComposeViewControllerWithBlock; {
+  SHMailComposerBlock block = ^(MFMailComposeViewController * theController,
+                                MFMailComposeResult theResults,
+                                NSError * theError) {
+    
+  };
+  
+  self.mailVc = [MFMailComposeViewController SH_mailComposeViewControllerWithBlock:block];
+  STAssertEqualObjects(self.mailVc.class, MFMailComposeViewController.new.class, nil);
+  STAssertNotNil(self.mailVc.mailComposeDelegate, nil);
+  STAssertEqualObjects(block, self.mailVc.SH_blockComposerCompletion, nil);
+}
+
 
 #pragma mark - Properties
 

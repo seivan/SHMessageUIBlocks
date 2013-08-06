@@ -13,11 +13,14 @@
 +(instancetype)SH_mailComposeViewController; {
   MFMailComposeViewController * vc = [[MFMailComposeViewController alloc] init];
   [_SHComposerBlocksManager setComposerDelegate:(id<SHComposerDelegate>)vc];
-  NSLog(@"%@", vc.delegate);
   return vc;
 }
 
-
++(instancetype)SH_mailComposeViewControllerWithBlock:(SHMailComposerBlock)theBlock; {
+  MFMailComposeViewController * vc = [self SH_mailComposeViewController];
+  [vc SH_setComposerCompletionBlock:theBlock];
+  return vc;
+}
 
 
 #pragma mark - Properties

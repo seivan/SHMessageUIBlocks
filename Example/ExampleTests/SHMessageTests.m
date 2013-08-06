@@ -28,6 +28,19 @@
   STAssertNotNil(self.messageVc.messageComposeDelegate, nil);
 }
 
+-(void)testSH_mailComposeViewControllerWithBlock; {
+  SHMessageComposerBlock block = ^(MFMessageComposeViewController * theController,
+                                   MessageComposeResult theResults) {
+    
+  };
+  
+  self.messageVc = [MFMessageComposeViewController SH_messageComposeViewControllerWithBlock:block];
+  STAssertEqualObjects(self.messageVc.class, MFMessageComposeViewController.new.class, nil);
+  STAssertNotNil(self.messageVc.messageComposeDelegate, nil);
+  STAssertEqualObjects(block, self.messageVc.SH_blockComposerCompletion, nil);
+}
+
+
 
 #pragma mark - Properties
 

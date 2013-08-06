@@ -13,6 +13,12 @@
   return vc;
 }
 
++(instancetype)SH_messageComposeViewControllerWithBlock:(SHMessageComposerBlock)theBlock; {
+  MFMessageComposeViewController * vc = [self SH_messageComposeViewController];
+  [vc SH_setComposerCompletionBlock:theBlock];
+  return vc;
+}
+
 
 
 #pragma mark - Properties

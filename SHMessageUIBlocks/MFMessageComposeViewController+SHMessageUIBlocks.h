@@ -13,7 +13,7 @@ typedef void (^SHMessageComposerBlock)(MFMessageComposeViewController * theContr
 
 #pragma mark - Init
 +(instancetype)SH_messageComposeViewController;
-
++(instancetype)SH_messageComposeViewControllerWithBlock:(SHMessageComposerBlock)theBlock;
 
 #pragma mark - Properties
 
