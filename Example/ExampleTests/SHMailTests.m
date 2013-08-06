@@ -15,38 +15,8 @@
 @implementation SHMailTests
 @end
 
-@interface SHMailTestsIntegration : SHMailTests
-@end
 
 @interface SHMailTestsCallbacks : SHMailTests
-@end
-
-
-@implementation SHMailTestsIntegration
-
-#pragma mark - Init
-//+(instancetype)SH_mailComposeViewController;
--(void)testSH_mailComposeViewController; {
-  
-}
-
-
-
-#pragma mark - Properties
-
-
-#pragma mark - Setters
--(void)testSH_setComposerCompletionBlock; {
-  
-}
-
-
-
-#pragma mark - Getters
--(void)testSH_blockComposerCompletion; {
-  
-}
-
 @end
 
 
@@ -70,12 +40,15 @@
                                 NSError * theError) {
     
     STAssertEqualObjects(theController, self.mailVc, nil);
-    STAssertEquals(theController, MFMailComposeResultCancelled, nil);
+    STAssertEquals(theResults, MFMailComposeResultCancelled, nil);
     STAssertEqualObjects(theError, nil, nil);
     didAssert = YES;
   };
   [self.mailVc SH_setComposerCompletionBlock:block];
-  STAssertEqualObjects(block, self.mailVc.SH_blockComposerCompletion, nil);
+  
+  self.mailVc.SH_blockComposerCompletion(self.mailVc, MFMailComposeResultCancelled, nil);
+  STAssertTrue(didAssert, nil);
+  
 }
 
 
