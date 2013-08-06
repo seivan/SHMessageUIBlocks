@@ -61,6 +61,7 @@ API
 #pragma mark -
 #pragma mark Init
 +(instancetype)SH_mailComposeViewController;
++(instancetype)SH_mailComposeViewControllerWithBlock:(SHMailComposerBlock)theBlock;
 
 ```
 
@@ -97,6 +98,7 @@ typedef void (^SHMailComposerBlock)(MFMailComposeViewController * theController,
 #pragma mark -
 #pragma mark Init
 +(instancetype)SH_messageComposeViewController;
++(instancetype)SH_messageComposeViewControllerWithBlock:(SHMessageComposerBlock)theBlock;
 
 ```
 
