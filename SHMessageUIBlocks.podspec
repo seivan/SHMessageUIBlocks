@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   name           = "SHMessageUIBlocks"
-  url            = "https://github.com/CocoaStevia/#{name}"
+  url            = "https://github.com/seivan/#{name}"
   git_url        = "#{url}.git"
-  s.name         = name
   version        = "1.0.0"
   source_files   = "#{name}/**/*.{h,m}"
 
+  s.name         = name
   s.version      = version
   s.summary      = "CompletionBlocks for MFMailComposeViewController and MFMessageComposeViewController (MessageUI framework)."
   s.description  = <<-DESC
