@@ -1,8 +1,8 @@
 SHMessageUIBlocks
 ==========
 [![Build Status](https://travis-ci.org/seivan/SHMessageUIBlocks.png?branch=master)](https://travis-ci.org/seivan/SHMessageUIBlocks)
-[![Version](http://cocoapod-badges.herokuapp.com/v/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
+[![Version](https://cocoapod-badges.herokuapp.com/v/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
+[![Platform](https://cocoapod-badges.herokuapp.com/p/SHMessageUIBlocks/badge.png)](http://cocoadocs.org/docsets/SHMessageUIBlocks)
 
 Overview
 --------
