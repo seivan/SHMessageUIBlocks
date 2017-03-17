@@ -1,3 +1,5 @@
+Deprecated please use [RxCocoa with RxSwift](https://github.com/ReactiveX/RxSwift)
+
 SHMessageUIBlocks
 ==========
 [![CI Status](https://img.shields.io/travis/seivan/SHMessageUIBlocks.svg?style=flat)](https://travis-ci.org/seivan/SHMessageUIBlocks)
